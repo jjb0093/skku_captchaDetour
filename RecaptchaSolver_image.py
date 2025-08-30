@@ -232,6 +232,7 @@ class ImageRecaptchaSolver:
 
                                 if(len(answer) < 1):
                                     print("답변이 너무 적어 재시도")
+                                    reload.click()
                                     break
                                 
                                 WebDriverWait(self.driver, self.timeout).until(
@@ -258,6 +259,7 @@ class ImageRecaptchaSolver:
 
                             if(len(answer) < 1):
                                 print("답변이 너무 적어 재시도")
+                                reload.click()
                                 break
 
                             WebDriverWait(self.driver, self.timeout).until(
