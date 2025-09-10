@@ -12,3 +12,7 @@ https://github.com/DannyLuna17/RecaptchaV2-IA-Solver 에서 제공하는 CNN 모
 https://github.com/aydinnyunus/gpt4-captcha-bypass 에서 제공하는 프롬포트만 활용<br>
 따로 학습된 CNN 모델을 활용하였을 때보다 정확성이 현저히 낮음. (특히 4x4 이미지의 경우)<br>
 프롬포트의 개선이 필요할지도..?
+<br><br>
+2025/09/11 openCV를 활용한 geeTest v4 슬라이더 유형 우회 파일 업로드<br>
+배경 이미지와 퍼즐 조각 이미지를 추출하여 끼워맞추는 식으로 위치를 찾는 방식<br>
+이미지 저장 후 전처리하는 과정이 부족해 명조, 밝기와 같은 속성 분석 후 다시 업로드 예정<br>
