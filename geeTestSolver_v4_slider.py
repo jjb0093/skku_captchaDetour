@@ -57,9 +57,9 @@ class GeeTestSolver_Slider:
                     morceau[i, k, 3] = 0
                     alpha[i, k] = 0
 
-        x, y, w, h = cv2.boundingRect(alpha)
-        alpha_coupe = alpha[y:y+h, x:x+w]
-        morceau_gray_coupe = morceau_gray[y:y+h, x:x+w]
+        x_bound, y_bound, w, h = cv2.boundingRect(alpha)
+        #alpha_coupe = alpha[y_bound:y_bound+h, x_bound:x_bound+w]
+        morceau_gray_coupe = morceau_gray[y_bound:y_bound+h, x_bound:x_bound+w]
 
         kernel = np.ones((3, 3), np.uint8)
         morceau_edge = cv2.Canny(morceau_gray_coupe, 50, 150)
@@ -105,8 +105,8 @@ class GeeTestSolver_Slider:
                 background_gray[i + y, k + x] = morceau_gray_coupe[i, k]
 
         cv2.imwrite("imgFiles/geeTest/slider_background_fin.png", background_gray)
-       
-        return (220 * ((x + morceau_gray_coupe.shape[1] / 2) / background_gray.shape[1]))
+
+        return (x - x_bound)
 
     def solver(self):
         print("geeTest 슬라이더형 해결 시작")
