@@ -130,47 +130,10 @@ for i in range(6):
     img = cv2.imread(f"{path_background}/background{i+1}.png")
     img = cv2.Canny(img, 300, 400)
     cv2.imwrite(f"trainDataNew/background/{i+1}.png", img)
-    height, width = map(lambda x: x-50, img.shape[:2])
+    height, width = img.shape[:2]
 
     for h in range(0, height - 50, 10):
         for w in range(0, width - 50, 10):
             morceau = img[h : h + 50, w : w + 50]
 
             cv2.imwrite(f"trainDataNew/background/{i+1}_{h}_{w}.png", morceau)
-
-'''
-count = 1
-path = "imgFiles/geeTest/icons"
-for icon in os.listdir(path):
-    img = cv2.imread(f"{path}/{icon}", cv2.IMREAD_UNCHANGED)
-    img_edge = cv2.Canny(img, 50, 150)
-    img_bgra = cv2.cvtColor(img_edge, cv2.COLOR_GRAY2BGRA)
-
-    img_bgra[:, :, 3] = img_edge
-    img_bgra[:, :, 0:3] = 255
-
-    kernel = [[1, 0, 1, 1], [1, 1, 1, 0], [0, 1, 1, 1], [1, 1, 0, 1]]
-    #kernel = np.ones((5,5), dtype=np.uint8)
-    img_bgra[:, :, 3] = cv2.dilate(img_bgra[:, :, 3], np.array(kernel, dtype = np.uint8), iterations = 1)
-
-    cv2.imwrite(f"imgFiles/geeTest/icons_canny/icon_{count}.png", img_bgra)
-    count += 1
-'''
-'''
-count = 1
-path = "imgFiles\geeTest\icons_canny\icon_7.png"
-
-for i in range(len(colors)):
-    img = cv2.imread(path, cv2.IMREAD_UNCHANGED)
-    b, g, r, a = cv2.split(img)
-
-    colored_img = np.zeros_like(img)
-    colored_img[:, :, 0] = colors[list(colors.keys())[i]][2]
-    colored_img[:, :, 1] = colors[list(colors.keys())[i]][1]
-    colored_img[:, :, 2] = colors[list(colors.keys())[i]][0]
-    colored_img[:, :, 3] = a
-
-    result = shear(colored_img, 0.2, 0)
-
-    cv2.imwrite(f"imgFiles/geeTest/icons_expansion/icon_{count}_{list(colors.keys())[i]}.png", result)
-'''
