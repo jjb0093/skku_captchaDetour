@@ -155,7 +155,7 @@ lossCount = 0
 
 for epoch in range(num_epochs):
     neg_sampled = random.sample(neg_pairs, len(pos_pairs))
-    neg_back_sampled = random.sample(neg_back_pairs, len(neg_back_pairs) // 2)
+    neg_back_sampled = random.sample(neg_back_pairs, len(pos_pairs) // 2)
 
     imgPairs = pos_pairs + neg_sampled + neg_back_sampled
     labels = [0] * len(pos_pairs) + [1] * len(neg_sampled) + [1] * len(neg_back_sampled)
@@ -183,4 +183,5 @@ for epoch in range(num_epochs):
     if(lossCount == 5):
         print("개선 없음. 학습 종료")
         break
+
 
