@@ -143,7 +143,6 @@ neg_back_pairs = []
 backgroundNames = os.listdir("trainDataNew/backgrounds")
 for i in range(len(iconNames)):
     for k in range(len(backgroundNames)):
-        print([iconNames[i], f"backgrounds/{backgroundNames[k]}"])
         neg_back_pairs.append([iconNames[i], f"backgrounds/{backgroundNames[k]}"])
 
 model = SiamNetwork().to(device)
@@ -184,3 +183,4 @@ for epoch in range(num_epochs):
     if(lossCount == 5):
         print("개선 없음. 학습 종료")
         break
+
