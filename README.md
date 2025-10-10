@@ -21,4 +21,7 @@ https://github.com/aydinnyunus/gpt4-captcha-bypass 에서 제공하는 프롬포
 modifier으로 이미지 증강, network으로 학습 진행<br>
 정확도 확보가 되지 않아 추후 데이터 변경 및 알고리즘 개선으로 다시 학습 예정
 <br><br>
-2025/09/28 선행 연구 (OEDIPUS) 논문 읽고 연구 방향성 명확히 정립<br>
+2025/09/28 선행 연구 (OEDIPUS) 논문 읽고 연구 방향성 명확히 정립
+<br><br>
+2025/10/10 LLM을 활용한 캡챠 종류 및 유형 탐지 개발 및 평가<br>
+상용화되지 않은 서비스 분류 불가, 세부적인 유형 (geeTest-icon, slider 등) 구분 불가<br>
