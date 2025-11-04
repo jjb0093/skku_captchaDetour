@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from captchaDetect import captchaDetect
 from solver.reCaptchaSolver import ReCaptchaSolver
 from solver.geeTestSlideSolver import GeeTestSlideSolver
+from solver.geeTestIconSolver import GeeTestIconSolver
 
 class captchaSolver:
     def __init__(self, driver):
@@ -13,7 +14,7 @@ class captchaSolver:
         captcha = {
             "reCAPTCHA": ReCaptchaSolver,
             "GeeTest_Slide": GeeTestSlideSolver,
-            "GeeTest_Icon": None
+            "GeeTest_Icon": GeeTestIconSolver
         }
 
         detectResult = captchaDetect(self.driver).detectCaptcha()
